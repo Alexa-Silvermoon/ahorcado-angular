@@ -1,4 +1,25 @@
 # Ahorcado
+# Notas
+Juego de ahorcado hecho en Angular  con TS
+
+No olvidar reconstruir la carpeta node_modules con el comando:
+```
+npm install
+```
+
+COMANDOS PARA EJECUTAR EN EL CMD Y CORRER LA APP:
+```
+ng serve -o
+```
+
+COMANDOS PARA GENERAR CARPETA DIST
+```
+ng build
+```
+
+
+
+# Ahorcado
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 

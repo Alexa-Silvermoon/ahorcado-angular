@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.ahorcado-img {
+    height: 400px;
+}
+/*
+ahorcado-img le dara tamaño a nuestra imagen en app.component.html
+*/
+
+button {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+/*
+button le dara tamaño a nuestros botones
+*/
