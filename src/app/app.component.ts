@@ -9,7 +9,12 @@ import { Component } from '@angular/core';
 */
 export class AppComponent {
 
-  palabra = 'PANDEBONO';
+  palabras = ['DOKI', 'PUF', 'PARFAIT', 'DULCE', 'OSCURIDAD', 'ELECTRICIDAD', 'LLUVIOSO', 'SOL', 'CALMA', 'FELIZ',
+              'MELANCOLIA', 'PENSAMIENTO', 'IMPULSIVO', 'MASACRE', 'DRAMA', 'CARMESI', 'ABRAZO', 'EMOCION', 'JUGAR', 'LUZ',
+              'DESESPERANZA', 'TENAZ', 'HORROR', 'RATON', 'VAINILLA', 'JUEGOS', 'BRILLANTE', 'BURBUJAS', 'AZUCAR', 'ROMANCE',
+              'GATITO', 'KAWAII', 'SALTAR', 'FILOSOFIA', 'SECRETO', 'TORBELLINO', 'MIEDO'];
+
+  palabra = this.palabras[Math.floor(Math.random() * this.palabras.length)]
   palabraOculta = '';
 
   intentos = 0;

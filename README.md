@@ -1,6 +1,6 @@
 # Ahorcado
 # Notas
-Juego de ahorcado hecho en Angular  con TS
+Juego de ahorcado hecho en Angular  con TS, tiene imagenes de juego Doki Doki, funciona con array aleatorio de palabras
 
 No olvidar reconstruir la carpeta node_modules con el comando:
 ```

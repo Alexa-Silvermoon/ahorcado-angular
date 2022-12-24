@@ -2,64 +2,68 @@
   <div class="col text-center">       son traidas desde el bootstrap -->
     <!-- todo lo que este dentro de las llaves {{}} es traido desde app.component.ts -->
 
-<div class="row">
-  <div class="col text-center">
+    <div class="row" *ngIf="!gano">
+      <div class="col text-center">
+    
+          <img src="assets/img/{{ intentos }}.png" class="ahorcado-img"> <!-- class="ahorcado-img" conecta styles.css para darle tamaño a las imagenes -->
+    <!-- la linea de arriba es donde trae nuestro nuestras imagenes -->
+          <h3>Intentos <small> {{ intentos }} / 9</small> </h3> <!-- intentos 0/9 -->
+    
+      </div>
+    </div>
+    
+    <div class="row" *ngIf="!gano && !perdio">
+      <div class="col text-center">
+    
+          <h1> {{ palabraOculta }} </h1>
+          <!-- this.palabraOculta = '_ '.repeat( this.palabra.length ); la interpolacion-->
+          <!-- la linea de arriba quiere decir que la palabra oculta sera tan largar como la palabra.length
+          y .repeat rrepetira es guion bajo y el espacio '_ '-->
+    
+      </div>
+    </div>
+    
+    <div class="row" *ngIf="gano"> <!-- si jugador gano-->
+      <div class="col text-center">
 
-      <img src="assets/img/{{ intentos }}.png" class="ahorcado-img"> <!-- class="ahorcado-img" conecta styles.css para darle tamaño a las imagenes -->
-<!-- la linea de arriba es donde trae nuestro nuestras imagenes -->
-      <h3>Intentos <small> {{ intentos }} / 9</small> </h3> <!-- intentos 0/9 -->
+        <img src="assets/img/win.png" class="ahorcado-img">
 
-  </div>
-</div>
+        <h1> {{ palabraOculta }} </h1>
 
-<div class="row">
-  <div class="col text-center">
-
-      <h1> {{ palabraOculta }} </h1>
-      <!-- this.palabraOculta = '_ '.repeat( this.palabra.length ); la interpolacion-->
-      <!-- la linea de arriba quiere decir que la palabra oculta sera tan largar como la palabra.length
-      y .repeat rrepetira es guion bajo y el espacio '_ '-->
-
-  </div>
-</div>
-
-<div class="row" *ngIf="gano"> <!-- si jugador gano-->
-  <div class="col text-center">
-
-      <h1> Felicidades Ganaste!!! </h1>
-      <h4> :D </h4>
-
-  </div>
-</div>
-
-<div class="row" *ngIf="perdio"> <!-- si jugador perdio -->
-  <div class="col text-center">
-
-      <h1> Lo siento, perdiste :( </h1>
-      <h4> {{ palabra }} </h4>
-
-  </div>
-</div>
-
-<div class="row" *ngIf="!gano && !perdio">
-  <div class="col text-center">
-    <!-- *ngIf="!gano && !perdio" lo que hace es que si jugador no ha ganado o no ha perdido
-    entonces el teclado seguira siendo visible -->
-
-      <button (click)="comprobar( letra )" *ngFor="let letra of letras" class="btn btn-primary">
-        {{ letra }} <!-- {{esto es una interpolacion de strings }}-->
-        <!-- (click)="comprobar( letra )" click es escuchar un evento, comprobar es un metodo en app.component.ts-->
-        <!-- angular entiende que letra es el argumento que tendra el metodo comprobar comprobar( letra: string ) { -->
-        <!-- *ngFor="let letra of letras" este es un ciclo for que me itera por el arreglo letras-->
-      </button>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col text-center">
-
-      <h4> Made By: Christian Alexander Martinez Millan </h4>
-
-  </div>
-</div>
+          <h1> Felicidades Ganaste!!! </h1>
+          <h4> :D </h4>
+    
+      </div>
+    </div>
+    
+    <div class="row" *ngIf="perdio"> <!-- si jugador perdio -->
+      <div class="col text-center">
+    
+          <h1> Lo siento, perdiste :( </h1>
+          <h1> {{ palabra }} </h1>
+    
+      </div>
+    </div>
+    
+    <div class="row" *ngIf="!gano && !perdio">
+      <div class="col text-center">
+        <!-- *ngIf="!gano && !perdio" lo que hace es que si jugador no ha ganado o no ha perdido
+        entonces el teclado seguira siendo visible -->
+    
+          <button (click)="comprobar( letra )" *ngFor="let letra of letras" class="btn btn-primary">
+            {{ letra }} <!-- {{esto es una interpolacion de strings }}-->
+            <!-- (click)="comprobar( letra )" click es escuchar un evento, comprobar es un metodo en app.component.ts-->
+            <!-- angular entiende que letra es el argumento que tendra el metodo comprobar comprobar( letra: string ) { -->
+            <!-- *ngFor="let letra of letras" este es un ciclo for que me itera por el arreglo letras-->
+          </button>
+    
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col text-center">
+    
+          <h4> Made By: Christian Alexander Martinez Millan </h4>
+    
+      </div>
+    </div>
